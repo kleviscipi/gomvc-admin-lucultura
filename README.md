@@ -60,6 +60,14 @@ GRANT ALL PRIVILEGES ON DATABASE gomvc TO gomvc;
 and go to  `App/Core/_data/_schema/sql_query.sql` ,`sql_natyre.sql` , `sql_movies.sql` , `keys.sql` install all tables.
 For all data install the dump   `App/Core/_data/_schema/gomvcdump.sql` where is included , users, roles ect ect;
 
+Command for dump postgres
+
+```SQL
+
+  pg_dump --host=localhost --username=gomvc gomvc > gomvc-admin-lucultura/App/Core/_data/_schema/gomvcdump.sql
+
+```
+
 ## Login
 go to url `http://gomvc-admin.local/Admin/login`
 
