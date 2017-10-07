@@ -1,0 +1,25 @@
+{
+	"autoload":{
+		"psr-4":{
+		"Go\\" : [
+                "App",
+                "App/Src/Controllers/",
+                "App/SrcApi/ApiControllers/",
+                "App/Src/Controllers/AppController/",
+                "App/Src/Models/",
+                "App/SrcApi/ApiModels/",
+                "App/Src/Models/AppModel/",
+                "App/Core/",
+                "App/Src/Views/",
+                "App/Config/",
+                "App/Templates/",
+                "App/Languages/",
+                "App/Helpers/",
+                "App/Library/",
+                "App/Library/PhpMailer/"
+
+            ]
+			
+		}
+	}
+}

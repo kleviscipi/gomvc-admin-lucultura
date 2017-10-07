@@ -1,0 +1,5 @@
+id;action;controller;description;user_id;counts;forsuperuser;status;created
+1;Add;Books; Inserted 0 books;1;0;t;t;2016-11-22 11:28:21.252382
+2;Delete;Books; Deleted 1 book;1;1;t;t;2016-11-22 11:44:11.671452
+3;Delete;Movies;Deleted 1 movie;1;1;t;t;2016-11-22 12:03:34.006026
+4;Add;Movies; Inserted 1 actors and 40 movies;1;40;t;t;2016-11-22 12:07:18.977946

@@ -1,0 +1,4 @@
+id;name;subname;email;username;password;token;tokenpassword;role_id;created
+3;test1;test1;djd@gkg.com;myuser;$2y$10$WzgDl22fslvJ2ROIqSSu6.9jut0Bc5SoJIgd0BYcW5ozMgFLeyLpG;;;2;2016-11-11 15:28:35.375328
+2;beklas1;beklas2;cip.tr@gmail.com;bekla;$2y$10$2u9rA9RFz2GQPrhj6pmGfOehD9Yw4gm0kKWquzlt5AO6Zz/PNuxAa;;;2;2016-11-11 15:26:09.544115
+1;klevis;cipi;cipiklevis@gmail.com;admin;$2y$10$PiF4Lzvev3BifIV1YGuO6eZFklgHlGA2fPZN1iPyDJ83jfWZtMq6a;;;3;2016-11-07 16:44:28.656856

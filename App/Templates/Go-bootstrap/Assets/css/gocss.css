@@ -1,0 +1,375 @@
+.container_go{
+	width: 60%;
+	margin: auto;
+	background: none;
+}
+.md_go{
+
+    border: 1px solid black;
+    display: inline-block;
+	width: 99%;
+	margin-bottom: 5px;
+
+}
+.md_2_go{
+    border: 1px solid black;
+    display: inline-block;
+    width: 49%;
+    margin: 0px;
+    padding: 4px 0px;
+    margin-bottom: 5px;
+}
+
+.md_3_go{
+	border: 1px solid black;
+	display: inline-block;
+	width: 32%;
+	margin: 0px;
+	padding: 4px 0px;
+	margin-bottom: 5px;
+}
+.md_4_go{
+	border: 1px solid black;
+	display: inline-block;
+	width: 24%;
+	margin: 0px;
+	padding: 4px 0px;
+	margin-bottom: 5px;
+}
+
+.article_go{
+	margin: 5px;
+	color: gray;
+	font-size: 13px;
+
+}
+.right_go{
+	margin-right: 0px;
+}
+.left_go{
+	margin-left: 0px;
+}
+/******************BUTTONS******************/
+button {
+	padding: 7px 19px;
+	border: 1px solid black;
+	font-size: 13px;
+	margin: auto;
+}
+.btn_go {
+	padding: 7px 19px;
+	border: 1px solid black;
+	font-size: 13px;
+	margin: auto;
+	text-decoration: none;
+}
+.success_btn_go{
+
+	border: 1px solid #00b3b3;
+	background-color: white;
+	color: #00b3b3;
+}
+.success_btn_go:hover{
+	border: 1px solid #00b3b3;
+	background-color: #00b3b3;
+	color: white;
+}
+.info_btn_go{
+	border: 1px solid  #004d99;
+	background-color: white;
+	color: #00b3b3;
+}
+
+.info_btn_go:hover{
+	border: 1px solid  #004d99;
+	background-color: #004d99;
+	color: white;
+}
+
+.black_btn_go{
+	border: 1px solid  black;
+	background-color: white;
+	color: black;
+}
+
+.black_btn_go:hover{
+	border: 1px solid  black;
+	background-color: black;
+	color: white;
+}
+.danger_btn_go{
+
+	border: 1px solid   #ff0000;
+	background-color: white;
+	color:  #ff0000;
+}
+
+.danger_btn_go:hover{
+	border: 1px solid   #ff0000;
+	background-color:  #ff0000;
+	color: white;
+}
+.warning_btn_go{
+	border: 1px solid  #e65c00;
+	background-color: white;
+	color:   #e65c00;
+}
+
+.warning_btn_go:hover{
+	border: 1px solid  #e65c00;
+	background-color:  #e65c00;
+	color: white;
+}
+
+.default_btn_go {
+	border: 1px solid #85adad;
+	background-color: white;
+	color:   #85adad;
+}
+
+.default_btn_go:hover{
+	border: 1px solid #85adad;
+	background-color: #85adad;
+	color: white;
+}
+/******************LABELS******************/
+
+.label_go{
+	border: 1px solid black;
+	padding: 1px 10px;
+	font-size: 11px;
+	text-decoration: none;
+
+}
+
+.success_lbl_go{
+
+	border: 1px solid #00b3b3;
+	background-color: white;
+	color: #00b3b3;
+}
+.success_lbl_go:hover{
+	border: 1px solid #00b3b3;
+	background-color: #00b3b3;
+	color: white;
+}
+.info_lbl_go{
+	border: 1px solid  #004d99;
+	background-color: white;
+	color: #00b3b3;
+}
+
+.info_lbl_go:hover{
+	border: 1px solid  #004d99;
+	background-color: #004d99;
+	color: white;
+}
+
+.black_lbl_go{
+	border: 1px solid  black;
+	background-color: white;
+	color: black;
+}
+
+.black_lbl_go:hover{
+	border: 1px solid  black;
+	background-color: black;
+	color: white;
+}
+.danger_lbl_go{
+
+	border: 1px solid   #ff0000;
+	background-color: white;
+	color:  #ff0000;
+}
+
+.danger_lbl_go:hover{
+	border: 1px solid   #ff0000;
+	background-color:  #ff0000;
+	color: white;
+}
+.warning_lbl_go{
+	border: 1px solid  #e65c00;
+	background-color: white;
+	color:   #e65c00;
+}
+
+.warning_lbl_go:hover{
+	border: 1px solid  #e65c00;
+	background-color:  #e65c00;
+	color: white;
+}
+
+.default_lbl_go {
+	border: 1px solid #85adad;
+	background-color: white;
+	color:   #85adad;
+}
+
+.default_lbl_go:hover{
+	border: 1px solid #85adad;
+	background-color: #85adad;
+	color: white;
+}
+
+/**********************FORMS***************************/
+
+input{
+	border: 1px solid black;
+	padding: 7px 0px;
+	width: 99%;
+	color: gray;
+	margin-bottom: 5px;
+	font-size: 12px;
+
+}
+input[type=checkbox]{
+	width: 20px;
+	margin-bottom: 5px;
+
+}
+input[type=radio]{
+	width: 20px;
+	margin-bottom: 5px;
+
+}
+
+textarea{
+
+	border: 1px solid black;
+	width: 99%;
+	height: 70px;
+	padding: 5px 0px;
+	margin-bottom: 5px;
+	color: gray;
+	font-size: 12px;
+
+
+}
+select{
+	border: 1px solid black;
+	width: 135px;
+	height: 30px;
+	font-size: 12px;
+	margin-bottom: 5px;
+	background: none;
+
+}
+.form_md_2_go{
+	width: 49%;
+	padding: 1px 1px;
+	display: inline-table;
+}
+.flex_go{
+	width: 99%;
+	margin-top: 5px;
+	display: inline-flex;
+}
+
+/********************* MODAL POP UP GO MODIFIED FROM WR3CHOLLS****************************/
+
+
+.modal_go {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal_content_go {
+   position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid black;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal_close_go {
+	color: #ff140b;
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.modal_close_go:hover,
+.modal_close_go:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal_header_go{
+	padding: 15px 15px;
+	background-color:none;
+	color:gray;
+	border-bottom: 1px solid black;
+}
+
+.modal_footer_go{
+	padding: 15px 15px;
+	background-color: none;
+	color:gray;
+
+
+}
+.modal_body_go{
+	padding: 0px 11px;
+	border-bottom: 1px solid black;
+	color: gray;
+} 
+/****************************************FOOTER*********************/
+
+.footer_go{
+
+	  border-top: 1px solid black;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  padding: 10px 10px;
+	  text-align: center;
+}
+
+/**********************************HEADER**************************/
+
+.nav_go{
+
+	  border-bottom: 1px solid black;
+	  right: 0;
+	  top: 0;
+	  left: 0;
+}
+.logo_go{
+	width: 50px;
+}
+.logo_go img{
+	width: 100%;
+}
+.titlesite_go{
+	display: inline-block;
+	font-size: 20px;
+}

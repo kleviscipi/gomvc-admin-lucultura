@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+        ServerName admin-lucultura.local
+
+        DocumentRoot /home/onlinedev10/myproject/gitlab/admin-lucultura
+
+        ErrorLog ${APACHE_LOG_DIR}/admin-lucultura.local_error.log
+        CustomLog ${APACHE_LOG_DIR}/admin-lucultura_local_access.log combined
+
+
+<Directory "/home/onlinedev10/myproject/gitlab/admin-lucultura">
+     Options -Indexes +FollowSymLinks +MultiViews
+
+        AllowOverride All
+
+        Order allow,deny
+
+        Allow from all
+
+Require all granted
+</Directory>
+</VirtualHost>
+

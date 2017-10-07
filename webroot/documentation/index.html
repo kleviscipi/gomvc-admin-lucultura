@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Documentation for Go mvc 1.0.0</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="dist/docs.css">
+	<link rel="stylesheet/less" type="text/css" href="dist/styles.less" />
+	<style type="text/css">
+		code {
+		    padding: 2px 4px;
+		    font-size: 90%;
+		    color: #c7254e;
+		    background-color: #f9f2f4;
+		    border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<h1 class="page-header" id="btn-groups">New Go mvc</h1>
+	<div class="bs-callout bs-callout-info" id="callout-btn-group-tooltips">
+	<h4>Overview</h4>
+		 <p>
+		 	New go mvc is a simple framework created with php, it contain and a simple api request on side.
+		 	It is a simple code to understand for beginers.
+		 	This framework it is compatible with postgres SQL, Keep inmind, this MVC work with Composer, if you dont have the <code>composer.phar</code> on your folder site
+		 	go to site and see instructions for installation .
+		 </p>
+	 </div>
+
+	<div class="bs-callout bs-callout-danger" id="callout-btn-group-tooltips">
+	<h4>Installation:</h4>
+		 <p>
+		 	For installation: <br>
+
+		 	before create a database with the name you want on postgres:<br>
+		 	<code>
+		 	CREATE DATABASE databasename ENCODING 'UTF-8';<br>
+CREATE USER databasename WITH PASSWORD 'zxczxc';<br>
+GRANT ALL PRIVILEGES ON DATABASE databasename TO databasename;<br>
+			</code>
+
+
+		 	 and create the seguents tables:
+		 	Tables: permissions, role_permissions and user permissions are used for give the permsiossions of access to roles and users foir one page.
+		 	If you  dont have the postgres sql installet check and install on machine.
+		 	for check : on terminal <code>psql --version</code>
+		 	I sugest to use ubuntu for everything on development and programing!
+		 	<br>
+		 </p>
+		 <div class="row">
+		  <div class="col-sm-6 col-md-4">
+		      <div class="caption">
+		        <h3>Users</h3>
+		        <p>
+		        	<code>
+				 		CREATE TABLE IF NOT EXISTS users(<br>
+							id 				serial PRIMARY KEY,<br>
+							name 			VARCHAR(30) NOT NULL,<br>
+							subname 		VARCHAR(30) NOT NULL,<br>
+							email 			VARCHAR(64) UNIQUE NOT NULL,<br>
+							username 		VARCHAR(30) UNIQUE NOT NULL,<br>
+							password 		VARCHAR(255) NOT NULL,<br>
+							token    		VARCHAR(255),<br>
+							tokenpassword   VARCHAR(255),<br>
+							role_id  		smallint,<br>
+							created 		timestamp DEFAULT CURRENT_TIMESTAMP<br>
+						);
+		        	</code>
+
+		        </p>
+		      </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		      <div class="caption">
+		        <h3>Permissions</h3>
+		        <p>
+		        	<code>
+						CREATE TABLE IF NOT EXISTS permisions(<br>
+							id serial PRIMARY KEY,<br>
+							controller 	VARCHAR(20) NOT NULL,<br>
+							method 		VARCHAR(20) NOT NULL,<br>
+							param1 		VARCHAR(20) NOT NULL<br>
+						);
+		        	</code>
+		        </p>
+		      </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		      <div class="caption">
+		        <h3>Role Permissions</h3>
+		        <p>
+		        	<code>
+						CREATE TABLE IF NOT EXISTS role_permisions(<br>
+							id serial PRIMARY KEY,<br>
+							role_id int NOT NULL,<br>
+							permision_id int NOT NULL,<br>
+							permited bool default false,<br>
+							FOREIGN KEY (role_id) REFERENCES role(id),<br>
+							FOREIGN KEY (permision_id) REFERENCES permisions(id)<br>
+						);
+		        	</code>
+		        </p>
+		      </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		      <div class="caption">
+		        <h3>Users Permissions</h3>
+		        <p>
+		        	<code>
+						CREATE TABLE IF NOT EXISTS user_permisions(<br>
+							id serial PRIMARY KEY,<br>
+							permision_id int NOT NULL,<br>
+							user_id int NOT NULL,<br>
+							role_id int NOT NULL,<br>
+							permited bool default false,<br>
+							FOREIGN KEY (permision_id) REFERENCES permisions(id),<br>
+							FOREIGN KEY (user_id) REFERENCES users(id)  <br>
+						);<br>
+						 ALTER TABLE permisions ADD column sublink  BOOL NOT NULL default false;<br>
+		        	</code>
+		        </p>
+		      </div>
+		  </div>
+		</div>
+			 <p>After install that create a local domain: on apache : or nginx, id you dont have installed apache or nginx check and install.<br>
+			 Check on terminal for apache: <code>apache2 -v </code>for install <code>sudo apt-get install apache2</code><br>
+			 Check on terminal for nginx: <code>nginx -v </code>for install <code>sudo apt-get install nginx</code><br>
+			 on the folder of script (New go mvc)/_data/apache/apache.txt  you can see the configuration for apache server  
+			 </p>
+			 <br>
+			 <p>
+			 	Go to terminal <code>sudo nano /etc/hosts</code> and insert newstie.local for your domain or give another name you want, save with <code>F2</code> and go on alwas on terminal , <code>cd /etc/apache2/sites-enabled/</code> create the file snewsite.local.conf and insert the code on have see on apache.txt on the folder apache (New Go mvc);<br>
+			 	like this:<br>
+			 	<code><VirtualHost *:80><br>
+				        ServerName newsite.local<br>
+
+				        DocumentRoot /home/yourdocumets/newsite<br>
+
+				        ErrorLog ${APACHE_LOG_DIR}/newsite.local_error.log<br>
+				        CustomLog ${APACHE_LOG_DIR}/newsite.local_access.log combined<br>
+
+
+				<Directory "/home/yourdocumets/newsite"><br>
+				     	Options -Indexes +FollowSymLinks +MultiViews<br>
+
+				        AllowOverride All<br>
+
+				        Order allow,deny<br>
+
+				        Allow from all<br>
+
+						Require all granted<br>
+				</Directory>
+				</VirtualHost></code>
+
+
+			 </p>
+	 </div>
+
+	<div class="bs-callout bs-callout-info" id="callout-btn-group-tooltips">
+	<h4>After this go to the your folder site and edit the file </h4>
+	<code>/App/_data/DatabasePostgres.ini</code> for database connections<br>
+	<code>/App/Config/Config.php</code> for general utilities.
+
+		 <p>
+		 Your folder site.<br>
+		 	<img src="dist/img/Selection_001.png">
+		 	<br>
+		 	The model, controller and view is created for roles and permissions.
+		 </p>
+
+	 </div>
+
+	<div class="bs-callout bs-callout-info" id="callout-btn-group-tooltips">
+	<h4>Example Create the first page</h4>
+	<p>You can go to <code>/Permissions/index </code>and create the files inserting on form Controller and Method and the file on view, controller and model are creating automatically<br> or can create manually: go to <code>/App/Src/COntrollers</code> and create file example <code>PageController.php</code><br>
+	<code>
+<? php<br>
+namespace Go;<br>
+use Go\AppController as AppController;<br>
+
+class PageController extends AppController
+{<br>
+	public function index(){<br>
+
+	    	 &nbsp;&nbsp;$data['title'] = 'Index';<br>
+	    	 &nbsp;&nbsp;$data['headertitle'] = 'Home page';<br>
+		
+		 	&nbsp;&nbsp;Template::View($this->Folder,'Index',$data);<br>
+	}<br>
+
+	public function add(){<br>
+		 &nbsp;&nbsp;$data['title'] = 'Add';<br>
+	     &nbsp;&nbsp;	$this->Model->add();<br>
+		 &nbsp;&nbsp;Template::View($this->Folder,'Start',$data);<br>
+
+	}<br>
+
+	public function Start(){<br>
+		 &nbsp;&nbsp;$data['title'] = 'Start';<br>
+		 &nbsp;&nbsp;$this->Model->start();<br>
+		 &nbsp;&nbsp;Template::View($this->Folder,'Start',$data);<br>
+
+	}<br>
+}<br>
+
+	</code>
+	after this on folder <code>App/Src/Models</code> and create a file <code>PagesModel.php</code><br>
+<code>
+	<?php
+	<br>
+	namespace Go;<br>
+	use Go\Connection as Connection;<br>
+	use Go\AppModel as AppModel;<br>
+
+
+	class PageModel extends AppModel
+	{<br>	
+
+		public function index(){<br>
+
+		&nbsp;&nbsp;	$title =  "From index pages model";<br>
+		&nbsp;&nbsp;	return $title;<br>
+
+		}<br>
+
+		public function add(){<br>
+
+		&nbsp;&nbsp;	$title =  "From add pages model";<br>
+		&nbsp;&nbsp;	return $title;<br>
+		
+		}<br>
+	}
+	</code><br>
+	The name of method on controllers <code> public function index() </code> must be equal with the name of folder <code>App/Src/Views</code> in uppercase Index.php<br>
+	on view Index.php you can extract the info example title : <code> echo $data['title'] </code><br>
+	Keep in mind for the api ypu must use a key on <code> header.php </code>
+	</p>
+	 </div>
+
+	<div class="bs-callout bs-callout-danger" id="callout-btn-group-tooltips">
+	<h4>First Api Request </h4>
+		 <p>
+		 For api request you must create a files on folder <code>/App/SrcApi/ApiController</code> and on <code>/App/SrcApi/Model</code>
+		 After creating the files as we did before with the first page, but this time we do not need a view page because requests can expect made with jquery using go.js files that you can find on the template folder.
+		 </p>
+		 <br>
+		 on view page <br>
+		 <code>App/Src/View/Index.php</code>
+		 <code><br>
+< script type="text/javascript"><br>
+&nbsp;&nbsp;    var Login={<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    init:function(conf){<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;      this.conf = conf;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;      this.events();<br>
+     &nbsp;&nbsp;   },<br>
+   &nbsp;&nbsp;     events:function(){<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;       Login.firstrequest();<br>
+    &nbsp;&nbsp;    },<br>
+     &nbsp;&nbsp;   firstrequest:function(){<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;       var self = Login;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;      post = self.conf.form.serialize();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;      post +='&from=login'; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;     Request.callPost('/Api/Admin/index',post,function(response){<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;         if(response.error < 1){<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;    console.log(response);      ;<br>
+                }<br>
+            });<br>
+        }
+    }<br>
+
+    Login.init({<br>
+    });<br>
+< /script ><br>
+		 </code>
+	 </div>
+</div>
+</body>
+</html>

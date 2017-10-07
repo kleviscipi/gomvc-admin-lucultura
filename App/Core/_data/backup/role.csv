@@ -1,0 +1,5 @@
+id;name;status;superuser
+4;Guest;t;f
+2;User;t;f
+1;Helpdesk;t;f
+3;Admin;t;t
