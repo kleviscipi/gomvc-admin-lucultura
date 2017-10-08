@@ -70,10 +70,10 @@ Command for dump postgres
 
 ## Login
 go to url `http://gomvc-admin.local/Admin/login`
-
-Username: cipiklevi@gmail.com
+``
+Username: cipiklevis@gmail.com
 Password: plplpl
-
+``
 
 ## Generate files from terminal.
 
