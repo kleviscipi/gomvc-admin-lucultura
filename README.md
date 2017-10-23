@@ -39,7 +39,7 @@ Note:: This project is created just for begginers and i hope this project can he
 
 ## Setup
 
-`git clone https://github.com/kleviscipi/code-prettify.git`
+`git clone https://github.com/kleviscipi/gomvc-admin-lucultura.git`
 
 after clone the repository go inside project
 
