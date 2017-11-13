@@ -7,8 +7,7 @@
             "email": "cipiklevis@gmail.com"
         }
     ],
-    "require": {}
-
+    "require": {},
 	"autoload":{
 		"psr-4":{
 		"Go\\" : [
