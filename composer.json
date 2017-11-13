@@ -1,4 +1,14 @@
 {
+    "name": "vendor/gomvc",
+    "description": "This is a custom mvc for begginers",
+    "authors": [
+        {
+            "name": "Klevis Cipi",
+            "email": "cipiklevis@gmail.com"
+        }
+    ],
+    "require": {}
+
 	"autoload":{
 		"psr-4":{
 		"Go\\" : [
